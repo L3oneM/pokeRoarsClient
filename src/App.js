@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 
 import { Provider } from 'react-redux';
@@ -47,22 +47,20 @@ function App() {
     <MuiThemeProvider theme={theme}>
       <Provider store={store}>
         <div>
-          <Router>
-            <Navbar />
-            <div className='container'>
-              <Switch>
-                <Route exact path='/' component={Home} />
-                <AuthRoute exact path='/login' component={Login} />
-                <AuthRoute exact path='/signup' component={SignUp} />
-                <Route exact path='/users/:handle' component={User} />
-                <Route
-                  exact
-                  path='/users/:handle/roar/:roarId'
-                  component={User}
-                />
-              </Switch>
-            </div>
-          </Router>
+          <Navbar />
+          <div className='container'>
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <AuthRoute exact path='/login' component={Login} />
+              <AuthRoute exact path='/signup' component={SignUp} />
+              <Route exact path='/users/:handle' component={User} />
+              <Route
+                exact
+                path='/users/:handle/roar/:roarId'
+                component={User}
+              />
+            </Switch>
+          </div>
         </div>
       </Provider>
     </MuiThemeProvider>

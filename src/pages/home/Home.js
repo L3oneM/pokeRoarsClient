@@ -17,16 +17,15 @@ class Home extends Component {
 
   render() {
     const { roars, loading } = this.props.data;
-    let recentRoarsMurkup = !loading ? (
-      roars.map(roar => <Roar key={roar.roarId} roar={roar} />)
-    ) : (
-      <RoarSkeleton />
-    );
 
     return (
       <Grid container spacing={4}>
         <Grid item sm={8} xs={12}>
-          {recentRoarsMurkup}
+          {!loading ? (
+            roars.map(roar => <Roar key={roar.roarId} roar={roar} />)
+          ) : (
+            <RoarSkeleton />
+          )}
         </Grid>
         <Grid item sm={4} xs={12}>
           <Profile />

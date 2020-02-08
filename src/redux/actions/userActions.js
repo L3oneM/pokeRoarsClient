@@ -57,7 +57,6 @@ export const getUserData = () => dispath => {
   axios
     .get('/user')
     .then(res => {
-      console.log(res);
       dispath({
         type: SET_USER,
         payload: res.data

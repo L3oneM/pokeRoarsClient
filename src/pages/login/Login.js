@@ -20,6 +20,10 @@ const style = theme => ({
       width: 128,
       height: 128
     }
+  },
+  test: {
+    marginTop: 16,
+    color: 'red'
   }
 });
 
@@ -114,6 +118,12 @@ class Login extends Component {
               Don't have an account ? sign up<Link to='/signup'> here</Link>
             </small>
           </form>
+          <Typography variant='h6' className={classes.test}>
+            Test mail: pika@email.com
+          </Typography>
+          <Typography variant='h6' className={classes.test}>
+            Test password: 1234567
+          </Typography>
         </Grid>
         <Grid item sm />
       </Grid>
